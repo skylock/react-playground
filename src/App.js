@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Counter from "./components/counter";
+import Counters from "./components/counters";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Counter></Counter>
+        <Counters></Counters>
       </div>
     );
   }
