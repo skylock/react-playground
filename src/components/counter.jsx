@@ -7,9 +7,12 @@ class Counter extends Component {
 
   render() {
     const { value, selected } = this.props;
+    console.log("counter", this.props);
 
     return (
       <div>
+        {this.props.children}
+        <h4>Counter #{this.props.id}</h4>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={this.handleIncrement}
