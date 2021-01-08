@@ -19,7 +19,7 @@ class Counter extends Component {
           Increment
         </button>
         <button
-          onClick={() => this.handleDelete(this.props.id)}
+          onClick={() => this.props.onDelete(this.props.id)}
           className="btn btn-danger btn-sm m-2"
         >
           Delete
@@ -32,10 +32,6 @@ class Counter extends Component {
     this.setState((state) => ({
       value: state.value + 1,
     }));
-  };
-
-  handleDelete = (evt) => {
-    this.props.onDelete(evt);
   };
 
   getBadgeClasses() {
