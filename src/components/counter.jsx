@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Counter extends Component {
   state = {
     count: 1,
-    tags: ["tag1", "tag2", "tag3"],
+    tags: [],
   };
 
   render() {
@@ -11,7 +11,10 @@ class Counter extends Component {
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button className="btn btn-secondary btn-sm">Increment</button>
-        {this.renderTags()}
+        <div>
+          {this.state.tags.length === 0 && "Please add a tag !"}
+          {this.renderTags()}
+        </div>
       </div>
     );
   }
