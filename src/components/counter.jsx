@@ -6,6 +6,7 @@ class Counter extends Component {
   };
 
   render() {
+    // console.log(this.props);
     return (
       <div>
         {this.props.children}
@@ -17,6 +18,12 @@ class Counter extends Component {
         >
           Increment
         </button>
+        <button
+          onClick={() => this.handleDelete(this.props.id)}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
+        </button>
       </div>
     );
   }
@@ -25,6 +32,10 @@ class Counter extends Component {
     this.setState((state) => ({
       value: state.value + 1,
     }));
+  };
+
+  handleDelete = (evt) => {
+    this.props.onDelete(evt);
   };
 
   getBadgeClasses() {
