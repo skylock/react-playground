@@ -6,8 +6,6 @@ class Counter extends Component {
   };
 
   render() {
-    console.log("counter", this.props);
-
     return (
       <div>
         {this.props.children}
