@@ -6,7 +6,6 @@ class Counter extends Component {
   };
 
   render() {
-    const { value, selected } = this.props;
     console.log("counter", this.props);
 
     return (
