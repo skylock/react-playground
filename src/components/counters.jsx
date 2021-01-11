@@ -19,6 +19,19 @@ class Counters extends Component {
     this.setState({ counters });
   };
 
+  handleIncrement = (counterId) => {
+    const index = this.state.counters.findIndex((c) => c.id === counterId);
+    const incrementedCounter = {
+      id: counterId,
+      value: this.state.counters[index].value++,
+    };
+    const updatedCounters = this.state.counters.filter(
+      (c) => c.id !== counterId
+    );
+    updatedCounters.push(incrementedCounter);
+    this.setState(updatedCounters);
+  };
+
   handleDelete = (counterId) => {
     const counters = this.state.counters.filter((c) => c.id !== counterId);
     this.setState({ counters });
@@ -36,8 +49,10 @@ class Counters extends Component {
         {this.state.counters.map((counter) => (
           <Counter
             key={counter.id}
+            value={counter.value}
             counter={counter}
             selected={true}
+            onIncrement={this.handleIncrement}
             onDelete={this.handleDelete}
           ></Counter>
         ))}
