@@ -19,17 +19,12 @@ class Counters extends Component {
     this.setState({ counters });
   };
 
-  handleIncrement = (counterId) => {
-    const index = this.state.counters.findIndex((c) => c.id === counterId);
-    const incrementedCounter = {
-      id: counterId,
-      value: this.state.counters[index].value++,
-    };
-    const updatedCounters = this.state.counters.filter(
-      (c) => c.id !== counterId
-    );
-    updatedCounters.push(incrementedCounter);
-    this.setState(updatedCounters);
+  handleIncrement = (counter) => {
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].value++;
+    this.setState({ counters });
   };
 
   handleDelete = (counterId) => {
