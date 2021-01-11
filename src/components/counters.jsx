@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import Counter from "./counter";
 
 class Counters extends Component {
+  // here we can compare previous props and state with current one
+  // and maybe execute a new Ajax call
+  componentDidUpdate(precProps, prevState) {
+    console.log("Counters - Updated", precProps);
+    console.log("Counters - Updated", prevState);
+  }
+
   render() {
     console.log("Counters - Rendered");
     const { counters, onIncrement, onDelete, onReset } = this.props;
