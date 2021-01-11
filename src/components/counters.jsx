@@ -9,6 +9,11 @@ class Counters extends Component {
     console.log("Counters - Updated", prevState);
   }
 
+  // executed just before a component will be removed from DOM
+  componentWillUnmount() {
+    console.log("Counters - Unmount");
+  }
+
   render() {
     console.log("Counters - Rendered");
     const { counters, onIncrement, onDelete, onReset } = this.props;
