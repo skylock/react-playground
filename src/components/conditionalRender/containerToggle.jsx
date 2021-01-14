@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Hello from "./hello";
 
-const conditionalRender = () => {
+const containerToggle = () => {
   const [showHello, setShowHello] = useState(true);
 
   return (
@@ -14,4 +14,4 @@ const conditionalRender = () => {
   );
 };
 
-export default conditionalRender;
+export default containerToggle;

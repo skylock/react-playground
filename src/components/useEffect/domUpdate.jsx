@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-const usingEffect = (props) => {
-  const [count, setCount] = useState(props.startIndex);
+const domUpdate = (props) => {
+  const [count, setCount] = useState(props.startIndex || 0);
 
   const getButtonText = (showHello) => {
     return showHello ? "Hide Hello" : "Show Hello";
@@ -22,4 +22,4 @@ const usingEffect = (props) => {
   );
 };
 
-export default usingEffect;
+export default domUpdate;

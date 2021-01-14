@@ -8,7 +8,7 @@ const hello = () => {
       console.log("umount");
     };
   });
-  return <div>Hello Component</div>;
+  return <div>Hello Functional Component</div>;
 };
 
 export default hello;
