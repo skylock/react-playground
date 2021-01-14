@@ -5,7 +5,7 @@ const hello = () => {
     console.log("mount");
 
     return () => {
-      console.log("unmount");
+      console.log("umount");
     };
   });
   return <div>Hello Component</div>;

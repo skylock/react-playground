@@ -5,7 +5,7 @@ const counter = (props) => {
   const [count, setCount] = useState(props.startIndex);
   const [showHello, setShowHello] = useState(true);
 
-  const getButtontext = (showHello) => {
+  const getButtonText = (showHello) => {
     return showHello ? "Hide Hello" : "Show Hello";
   };
   useEffect(() => {
@@ -22,7 +22,7 @@ const counter = (props) => {
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Increment</button>
       <button onClick={() => setShowHello(!showHello)}>
-        {getButtontext(showHello)}
+        {getButtonText(showHello)}
       </button>
     </div>
   );
