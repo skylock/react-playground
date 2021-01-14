@@ -4,10 +4,16 @@ import axios from "axios";
 const userProfile = () => {
   const [user, setUser] = useState({});
 
-  useEffect(async () => {
-    const res = await axios.get("https://randomuser.me/api/");
-    const [user] = res.data.results;
-    setUser(user);
+  useEffect(() => {
+    console.log("mounted");
+    axios.get("https://randomuser.me/api/").then((res) => {
+      const [userData] = res.data.results;
+      setUser(userData);
+    });
+
+    return () => {
+      console.log("unmounted");
+    };
   }, []);
 
   return (
