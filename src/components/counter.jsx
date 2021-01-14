@@ -4,7 +4,11 @@ const counter = (props) => {
   const [count, setCount] = useState(props.startIndex);
 
   useEffect(() => {
+    console.log(`useEffect ${count}`);
     document.title = `You clicked ${count} times`;
+    return () => {
+      console.log(`cleanup ${count}`);
+    };
   });
 
   return (
