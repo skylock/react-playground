@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const counter = (props) => {
   const [count, setCount] = useState(props.startIndex);
+
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  });
+
   return (
     <div>
       <p>You clicked {count} times</p>
