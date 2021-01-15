@@ -2,14 +2,20 @@ import React, { useContext } from 'react';
 import { UserContext } from '../UserContext';
 
 const About = () => {
-  const msg = useContext(UserContext);
+  const userContext = useContext(UserContext);
 
-  console.log('about => ', msg);
+  console.log('about => ', userContext.value);
 
   return (
     <div>
       <h2>About</h2>
-      <p>{msg}</p>
+
+      <input
+        type='text'
+        placeholder='Set new context'
+        onChange={(e) => userContext.setValue(e.target.value)}
+      />
+      <p>{userContext.value}</p>
     </div>
   );
 };
