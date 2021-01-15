@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useReducer } from "react";
 import axios from "axios";
-import { fetchUserProfile } from "./fetchUserProfile";
+import { useUserProfile } from "./useUserProfile";
 
 const userProfile = () => {
   const [toggle, setToggle] = useState(false);
-  const { data, loading } = fetchUserProfile(toggle);
+  const { data, loading } = useUserProfile(toggle);
   console.log("data", data);
   console.log("loading", loading);
   return (

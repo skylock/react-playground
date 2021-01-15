@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export const fetchUserProfile = (shouldReload) => {
+export const useUserProfile = (shouldReload) => {
   const [state, setState] = useState({ data: null, loading: true });
 
   useEffect(() => {
