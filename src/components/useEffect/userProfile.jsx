@@ -3,18 +3,24 @@ import axios from "axios";
 import { useUserProfile } from "./useUserProfile";
 
 const userProfile = () => {
-  const [toggle, setToggle] = useState(false);
-  const { data, loading } = useUserProfile(toggle);
+  const [toggleReload, setToggle] = useState(false);
+  const { data, loading } = useUserProfile(toggleReload);
   console.log("data", data);
   console.log("loading", loading);
   return (
     <div>
       User Profile
-      {loading ? <p>Loading ...</p> : <p>Loaded</p>}
-      <button onClick={() => setToggle(!toggle)}>Get other</button>
-      <div>
-        {data !== null && <pre>{JSON.stringify(data, undefined, 2)}</pre>}
+      <div style={{ margin: 10 }}>
+        <button onClick={() => setToggle(!toggleReload)}>Get other</button>
       </div>
+      {data === null ? (
+        <div>{loading ? <p>Loading ...</p> : <p>Loaded</p>}</div>
+      ) : (
+        <div>
+          <p>{`${data.name.first} ${data.name.last}`}</p>
+          <pre>{JSON.stringify(data, undefined, 2)}</pre>
+        </div>
+      )}
     </div>
   );
 };
