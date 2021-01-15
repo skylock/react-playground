@@ -3,22 +3,26 @@ import { login } from '../login';
 import { UserContext } from '../UserContext';
 
 const Index = () => {
-  const { value, setValue } = useContext(UserContext);
-  console.log('index => ', value);
+  const { user, setUser } = useContext(UserContext);
+  console.log('index => ', user);
 
   return (
     <div>
       <h2>Index</h2>
-      <p>{JSON.stringify(value, null, 2)}</p>
-      <button
-        type='button'
-        onClick={async () => {
-          const user = await login();
-          setValue(user);
-        }}
-      >
-        Login
-      </button>
+      <p>{JSON.stringify(user, null, 2)}</p>
+      {user ? (
+        <button onClick={() => setUser(null)}>Logout</button>
+      ) : (
+        <button
+          type='button'
+          onClick={async () => {
+            const user = await login();
+            setUser(user);
+          }}
+        >
+          Login
+        </button>
+      )}
     </div>
   );
 };

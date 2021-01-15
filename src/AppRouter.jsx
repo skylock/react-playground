@@ -5,7 +5,7 @@ import About from './pages/about';
 import { UserContext } from './UserContext';
 
 const AppRouter = () => {
-  const [value, setValue] = useState(null);
+  const [user, setUser] = useState(null);
 
   return (
     <Router>
@@ -20,7 +20,7 @@ const AppRouter = () => {
             </li>
           </ul>
         </nav>
-        <UserContext.Provider value={{ value, setValue }}>
+        <UserContext.Provider value={{ user, setUser }}>
           <Route path='/' exact component={Index}></Route>
           <Route path='/about' component={About}></Route>
         </UserContext.Provider>
