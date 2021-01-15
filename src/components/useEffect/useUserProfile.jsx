@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export const useUserProfile = (props) => {
+export const useUserProfile = (shouldReload) => {
   const [state, setState] = useState({ data: null, loading: true });
 
   useEffect(() => {
     console.log('mounted');
-    console.log('props', props);
     setState({ data: null, loading: true });
     setTimeout(() => {
       axios.get('https://randomuser.me/api/').then((res) => {
@@ -19,7 +18,7 @@ export const useUserProfile = (props) => {
     return () => {
       console.log('unmounted');
     };
-  }, [props]);
+  }, [shouldReload]);
 
   return state;
 };
