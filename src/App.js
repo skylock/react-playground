@@ -7,8 +7,13 @@ import UserProfile from './components/useEffect/userProfile';
 class App extends Component {
   render() {
     return (
-      <div className='App'>
-        {/* Using effect hook to fetch API data */ <UserProfile />}
+      <div className='row'>
+        <div className='column'>
+          {/* Using effect hook to fetch API data */ <UserProfile />}
+        </div>
+        <div className='column'>
+          {/* Using effect hook to fetch API data */ <UserProfile />}
+        </div>
       </div>
     );
   }
