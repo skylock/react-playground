@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 const hello = () => {
   useEffect(() => {
-    console.log("mount");
+    console.log('mount');
 
     return () => {
-      console.log("umount");
+      console.log('umount');
     };
   });
   return <div>Hello Functional Component</div>;

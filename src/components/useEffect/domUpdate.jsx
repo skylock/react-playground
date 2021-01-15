@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 const domUpdate = (props) => {
   const [count, setCount] = useState(props.startIndex || 0);
 
   const getButtonText = (showHello) => {
-    return showHello ? "Hide Hello" : "Show Hello";
+    return showHello ? 'Hide Hello' : 'Show Hello';
   };
   useEffect(() => {
     // console.log(`render ${count}`);

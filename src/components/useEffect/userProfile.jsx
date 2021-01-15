@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useReducer } from "react";
-import axios from "axios";
-import { useUserProfile } from "./useUserProfile";
+import React, { useState, useEffect, useReducer } from 'react';
+import axios from 'axios';
+import { useUserProfile } from './useUserProfile';
 
 const userProfile = () => {
   const [toggleReload, setToggle] = useState(false);
   const { data, loading } = useUserProfile(toggleReload);
-  console.log("data", data);
-  console.log("loading", loading);
+  console.log('data', data);
+  console.log('loading', loading);
   return (
     <div>
       User Profile

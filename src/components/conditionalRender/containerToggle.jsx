@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Hello from "./hello";
+import React, { useState } from 'react';
+import Hello from './hello';
 
 const containerToggle = () => {
   const [showHello, setShowHello] = useState(true);
@@ -8,7 +8,7 @@ const containerToggle = () => {
     <div>
       {showHello && <Hello />}
       <button onClick={() => setShowHello(!showHello)}>
-        {showHello ? "Hide Hello" : "Show Hello"}
+        {showHello ? 'Hide Hello' : 'Show Hello'}
       </button>
     </div>
   );
