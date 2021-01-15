@@ -6,16 +6,24 @@ export const LoginForm = () => {
 
   return (
     <div>
-      <input
-        type='text'
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type='password'
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <div className='preference'>
+        <label for='name'>Username</label>
+        <input
+          name='name'
+          type='text'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+      <div className='preference'>
+        <label for='password'>Password</label>
+        <input
+          name='password'
+          type='password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
     </div>
   );
 };

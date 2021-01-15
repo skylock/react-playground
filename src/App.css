@@ -11,6 +11,13 @@
   display: flex;
 }
 
+.preference {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0.5rem;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
