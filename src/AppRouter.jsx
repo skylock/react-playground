@@ -2,12 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Index from './pages/index';
 import About from './pages/about';
+import { UserContext } from './UserContext';
 
 const AppRouter = () => {
   return (
     <Router>
       <div>
-        <mav>
+        <nav>
           <ul>
             <li>
               <Link to='/'>Home</Link>
@@ -16,10 +17,11 @@ const AppRouter = () => {
               <Link to='/about'>About</Link>
             </li>
           </ul>
-        </mav>
-
-        <Route path='/' exact component={Index}></Route>
-        <Route path='/about' component={About}></Route>
+        </nav>
+        <UserContext.Provider value='hello from context'>
+          <Route path='/' exact component={Index}></Route>
+          <Route path='/about' component={About}></Route>
+        </UserContext.Provider>
       </div>
     </Router>
   );
