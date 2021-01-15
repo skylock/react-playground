@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useReducer } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import { useUserProfile } from './useUserProfile';
 
-const userProfile = () => {
+const UserProfile = () => {
   const [toggleReload, setToggle] = useState(false);
   const { data, loading } = useUserProfile(toggleReload);
   console.log('data', data);
@@ -25,4 +24,4 @@ const userProfile = () => {
   );
 };
 
-export default userProfile;
+export default UserProfile;

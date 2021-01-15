@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const counter = (props) => {
+const Counter = (props) => {
   const [count, setCount] = useState(props.startIndex);
 
   return (
@@ -11,4 +11,4 @@ const counter = (props) => {
   );
 };
 
-export default counter;
+export default Counter;
