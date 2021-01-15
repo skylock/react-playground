@@ -9,13 +9,7 @@ const About = () => {
   return (
     <div>
       <h2>About</h2>
-
-      <input
-        type='text'
-        placeholder='Set new context'
-        onChange={(e) => userContext.setValue(e.target.value)}
-      />
-      <p>{userContext.value}</p>
+      <p>{JSON.stringify(userContext.value, null, 2)}</p>
     </div>
   );
 };

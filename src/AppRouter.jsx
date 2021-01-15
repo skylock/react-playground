@@ -5,7 +5,7 @@ import About from './pages/about';
 import { UserContext } from './UserContext';
 
 const AppRouter = () => {
-  const [value, setValue] = useState('hello form context');
+  const [value, setValue] = useState(null);
 
   return (
     <Router>
