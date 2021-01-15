@@ -3,7 +3,8 @@ import axios from "axios";
 import { fetchUserProfile } from "./fetchUserProfile";
 
 const userProfile = () => {
-  const { data, loading } = fetchUserProfile("https://randomuser.me/api/");
+  const [toggle, setToggle] = useState(false);
+  const { data, loading } = fetchUserProfile(toggle);
   console.log("data", data);
   console.log("loading", loading);
   return (
