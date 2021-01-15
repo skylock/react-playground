@@ -1,27 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm } from './useForm';
 
 export const LoginForm = () => {
-  const [name, setName] = useState('');
-  const [password, setPassword] = useState('');
+  const [values, handleChange] = useForm({ email: '', password: '' });
+
+  console.log('v', values);
 
   return (
     <div>
       <div className='preference'>
-        <label for='name'>Username</label>
+        <label htmlFor='email'>Username</label>
         <input
-          name='name'
+          name='email'
           type='text'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={values.email}
+          onChange={handleChange}
         />
       </div>
       <div className='preference'>
-        <label for='password'>Password</label>
+        <label htmlFor='password'>Password</label>
         <input
           name='password'
           type='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={values.password}
+          onChange={handleChange}
         />
       </div>
     </div>
