@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const domUpdate = (props) => {
+const DomUpdate = (props) => {
   const [count, setCount] = useState(props.startIndex || 0);
 
   const getButtonText = (showHello) => {
@@ -22,4 +22,4 @@ const domUpdate = (props) => {
   );
 };
 
-export default domUpdate;
+export default DomUpdate;

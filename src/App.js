@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Counter from './components/useState/counter';
-import ContainerToggle from './components/conditionalRender/containerToggle';
-import DomUpdate from './components/useEffect/domUpdate';
-import UserProfile from './components/useEffect/userProfile';
+import Counter from './components/useState/Counter';
+import ContainerToggle from './components/conditionalRender/ContainerToggle';
+import DomUpdate from './components/useEffect/DomUpdate';
+import UserProfile from './components/useEffect/UserProfile';
+import { LoginForm } from './components/useState/LoginForm';
 class App extends Component {
   render() {
     return (
@@ -12,7 +13,7 @@ class App extends Component {
           {/* Using effect hook to fetch API data */ <UserProfile />}
         </div>
         <div className='column'>
-          {/* Using effect hook to fetch API data */ <UserProfile />}
+          <LoginForm />
         </div>
       </div>
     );

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Hello from './hello';
+import Hello from './Hello';
 
-const containerToggle = () => {
+const ContainerToggle = () => {
   const [showHello, setShowHello] = useState(true);
 
   return (
@@ -14,4 +14,4 @@ const containerToggle = () => {
   );
 };
 
-export default containerToggle;
+export default ContainerToggle;
