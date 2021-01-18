@@ -4,6 +4,9 @@ import { useForm } from './useForm';
 export const UseRefLoginForm = () => {
   const [values, handleChange] = useForm({ email: '', password: '' });
   const inputRef = useRef();
+  const renders = useRef(0);
+
+  console.log('form renders: ', renders.current++);
 
   return (
     <div>
