@@ -3,6 +3,7 @@
 }
 
 .column {
+  margin: 20px;
   flex: 50%;
 }
 

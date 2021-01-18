@@ -46,7 +46,7 @@ export const ToDosReducerDemo = () => {
       {todos.map((t, idx) => (
         <div
           key={t.text}
-          style={t.completed ? { textDecoration: 'line-throught' } : {}}
+          style={t.completed ? { textDecoration: 'line-through' } : {}}
           onClick={() => dispatch({ type: 'toggle-todo', idx })}
         >
           {t.text}
