@@ -7,6 +7,7 @@ const reducer = (state, action) => {
     case 'add-todo':
       return {
         todos: [...state.todos, { text: action.text, completed: false }],
+        todosCount: state.todosCount + 1,
       };
     case 'toggle-todo':
       return {
@@ -15,6 +16,7 @@ const reducer = (state, action) => {
 
           return t;
         }),
+        todosCount: state.todosCount,
       };
     default:
       return state;
@@ -23,7 +25,10 @@ const reducer = (state, action) => {
 
 export const ToDosReducerDemo = () => {
   // useReducer first arg is a function and second one is the initial state
-  const [{ todos }, dispatch] = useReducer(reducer, { todos: [] });
+  const [{ todos, todosCount }, dispatch] = useReducer(reducer, {
+    todos: [],
+    todosCount: 0,
+  });
   const [text, setText] = useState('');
 
   return (
@@ -41,6 +46,7 @@ export const ToDosReducerDemo = () => {
           onChange={(e) => setText(e.target.value)}
         />
       </form>
+      <div>Count : {todosCount}</div>
       <pre>{JSON.stringify(todos, null, 2)}</pre>
       {todos.map((t, idx) => (
         <div
