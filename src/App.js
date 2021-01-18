@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { ReducerDemo } from './components/useReducer/ReducerDemo';
+import { ToDosReducerDemo } from './components/useReducer/TodosReducerDemo';
 class App extends Component {
   render() {
     return (
       <div className='row'>
-        <ReducerDemo />
+        <ToDosReducerDemo />
       </div>
     );
   }
