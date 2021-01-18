@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
+
+const reducer = (action, state) => {
+  switch (action.type) {
+    case 'increment':
+      return state + 1;
+    case 'decrement':
+      return state - 1;
+    default:
+      return state;
+  }
+};
 
 export const ReducerDemo = () => {
-  const [counter, setCounter] = useState(0);
+  // useReducer first arg is a function and second one is the initial state
+  const [count, dispatch] = useReducer(reducer, 0);
+
   return (
     <div>
-      <div>Counter value: {counter}</div>
-      <button onClick={() => setCounter((c) => c + 1)}>Increment</button>
-      <button onClick={() => setCounter((c) => c - 1)}>Decrement</button>
+      <div>Counter value: {count}</div>
+      <button onClick={() => console.log('increment')}>Increment</button>
+      <button onClick={() => console.log('decrement')}>Decrement</button>
     </div>
   );
 };
