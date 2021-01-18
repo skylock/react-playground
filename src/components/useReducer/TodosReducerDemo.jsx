@@ -8,6 +8,15 @@ const reducer = (state, action) => {
       return {
         todos: [...state.todos, { text: action.text, completed: false }],
       };
+    case 'toggle-todo':
+      return {
+        todos: state.todos.map((t, idx) => {
+          t.completed =
+            idx === action.idx ? (t.completed = !t.completed) : t.completed;
+
+          return t;
+        }),
+      };
     default:
       return state;
   }
@@ -34,6 +43,15 @@ export const ToDosReducerDemo = () => {
         />
       </form>
       <pre>{JSON.stringify(todos, null, 2)}</pre>
+      {todos.map((t, idx) => (
+        <div
+          key={t.text}
+          style={t.completed ? { textDecoration: 'line-throught' } : {}}
+          onClick={() => dispatch({ type: 'toggle-todo', idx })}
+        >
+          {t.text}
+        </div>
+      ))}
     </div>
   );
 };
