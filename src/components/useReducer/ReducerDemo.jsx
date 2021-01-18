@@ -1,6 +1,8 @@
 import React, { useReducer } from 'react';
 
-const reducer = (action, state) => {
+// a reducer is a function that receives
+// the initial state and the action to be performed on that state
+const reducer = (state, action) => {
   switch (action.type) {
     case 'increment':
       return state + 1;
@@ -18,8 +20,8 @@ export const ReducerDemo = () => {
   return (
     <div>
       <div>Counter value: {count}</div>
-      <button onClick={() => console.log('increment')}>Increment</button>
-      <button onClick={() => console.log('decrement')}>Decrement</button>
+      <button onClick={() => dispatch({ type: 'increment' })}>Increment</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>
     </div>
   );
 };
