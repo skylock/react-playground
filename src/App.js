@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { CountProvider } from './components/useContext/count-context';
-import { CountDisplay } from './components/useContext/CountDisplay';
+import CountDisplay from './components/useContext/CountDisplay';
 
 const App = () => {
   return (
