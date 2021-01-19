@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { CountContext } from './count-context';
+import { CountStateContext } from './count-context';
 
 export const CountDisplay = () => {
-  const { count } = useContext(CountContext);
+  const { count } = useContext(CountStateContext);
 
   return <div>Count: {count}</div>;
 };

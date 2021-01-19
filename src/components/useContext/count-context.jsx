@@ -1,4 +1,6 @@
 import React from 'react';
 
-export const CountContext = React.createContext();
-export const CountDispatch = React.createContext;
+const CountStateContext = React.createContext();
+const CountDispatchContext = React.createContext();
+
+export { CountStateContext, CountDispatchContext };
