@@ -1,4 +1,5 @@
-import React, { useReducer } from 'react';
+import React, { useContext, useReducer } from 'react';
+import { CounterContext } from './CounterContext';
 
 function countReducer(state, action) {
   switch (action.type) {
@@ -12,11 +13,10 @@ function countReducer(state, action) {
 }
 
 const Counter = ({ children }) => {
-  console.log(children);
-
   const [state, dispatch] = useReducer(countReducer, { count: 0 });
+  const counterContext = useContext(CounterContext);
 
-  console.log(state);
+  console.log(counterContext);
 
   return (
     <div>

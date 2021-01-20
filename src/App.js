@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Counter from './components/useContext/Counter';
+import { CounterContext } from './components/useContext/CounterContext';
 
 const children = (
   <React.Fragment>
@@ -13,7 +14,9 @@ const App = () => {
   return (
     <div className='row'>
       <div className='column'>
-        <Counter children={children}></Counter>
+        <CounterContext.Provider value={'hello from counter context'}>
+          <Counter children={children}></Counter>
+        </CounterContext.Provider>
       </div>
     </div>
   );
