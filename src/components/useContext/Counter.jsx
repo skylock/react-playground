@@ -11,7 +11,9 @@ function countReducer(state, action) {
   }
 }
 
-const Counter = () => {
+const Counter = ({ children }) => {
+  console.log(children);
+
   const [state, dispatch] = useReducer(countReducer, { count: 0 });
 
   console.log(state);
@@ -21,6 +23,7 @@ const Counter = () => {
       <p>Count: {state.count}</p>
       <button onClick={() => dispatch({ type: 'increment' })}>Increment</button>
       <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>
+      {children}
     </div>
   );
 };
