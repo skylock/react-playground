@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import { CountStateContext } from './count-context';
+import React from 'react';
+import { useCountState } from './CounterProvider';
 
 const CountDisplay = () => {
-  const { count } = useContext(CountStateContext);
+  const state = useCountState();
 
-  return <div>Count: {count}</div>;
+  return <div>Count: {state.count}</div>;
 };
 
 export default CountDisplay;
