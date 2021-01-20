@@ -1,7 +1,7 @@
 import React, { useContext, useReducer } from 'react';
 
-export const CountStateContext = React.createContext();
-export const CountDispatchContext = React.createContext();
+const CountStateContext = React.createContext();
+const CountDispatchContext = React.createContext();
 
 const countReducer = (state, action) => {
   switch (action.type) {
