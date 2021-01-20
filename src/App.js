@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import CountDisplay from './components/useContext/CountDisplay';
+import Counter from './components/useContext/Counter';
 
 const App = () => {
   return (
     <div className='row'>
       <div className='column'>
-        <CountDisplay />
+        <Counter />
       </div>
     </div>
   );
