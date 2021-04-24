@@ -9,8 +9,8 @@ const App = () => {
     <div className='row'>
       <div className='column'>
         <CounterProvider>
-          <CountDisplay />
           <Counter />
+          <CountDisplay />
         </CounterProvider>
       </div>
     </div>
